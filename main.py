@@ -58,12 +58,7 @@ def send_message():
 
 @app.route("/info")
 def info_chat():
-    count = 0
-    with open("chat.json", "r") as json_file:
-        data = json.load(json_file)
-        for _ in data["messages"]:
-            count += 1
-    return f"В чате {count} сообщений"
+    return f"В чате {len(all_messages)} сообщений"
 
 
 def add_message(sender, text):
